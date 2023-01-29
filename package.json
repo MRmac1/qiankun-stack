@@ -1,0 +1,20 @@
+{
+  "name": "qiankun-stack",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run --parallel start",
+    "clean": "lerna clean --yes"
+  },
+  "devDependencies": {
+    "lerna": "^4.x",
+    "antd": "5.1.6",
+    "@ant-design/icons": "5.0.1"
+  },
+  "engines": { "node": ">=16.14" }
+}
+  
