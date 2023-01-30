@@ -1,0 +1,9 @@
+.collapsible-switch {
+    position: absolute;
+    top: 8px;
+    right: -24px;
+}
+
+.collapsible-switch > .trigger {
+    font-size: 18px;
+}

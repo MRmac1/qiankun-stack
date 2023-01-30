@@ -9,3 +9,4 @@ qiankun 微前端仓库，探索控制台功能最小集合
 | sub-docs  | React，帮助文档 | Docusaurus |
 | sub-vue   | Vue 业务应用    |            |
 
+## 路由划分
