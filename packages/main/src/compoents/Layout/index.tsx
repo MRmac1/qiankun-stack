@@ -11,22 +11,22 @@ import './index.css';
 
 const { Content } = Layout;
 
-// main 应用 router
-const mainRouter = createBrowserRouter([
-  {
-      path: "/",
-      children: [
-        {
-          path: "home",
-          element: <Home />,
-        },
-        {
-          path: "about",
-          element: <About />,
-        },
-      ],
-    },
-])
+// main 应用 router, @TODO 这里有 RouterProvider 外不能使用 router 内 api 待解决
+// const mainRouter = createBrowserRouter([
+//   {
+//       path: "/",
+//       children: [
+//         {
+//           path: "home",
+//           element: <Home />,
+//         },
+//         {
+//           path: "about",
+//           element: <About />,
+//         },
+//       ],
+//     },
+// ])
 
 const AppLayout: FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -41,9 +41,9 @@ const AppLayout: FC = () => {
             padding: 24,
           }}
         >
-          <div id='container'>
-            <RouterProvider router={mainRouter} />
-          </div>
+          <div id='container' />
+            {/* <RouterProvider router={mainRouter} /> */}
+          {/* </div> */}
         </Content>
       </Layout>
     </Layout>
