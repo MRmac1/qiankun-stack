@@ -29,8 +29,7 @@ const TopNav: FC = () => {
             mode="horizontal" defaultSelectedKeys={['sub-react']} 
             items={topMenuItems} 
             onClick={({ key }) => {
-                console.log('key', key);
-                // history.pushState()
+                window.history.pushState({}, '', `/${key}`)
             }} 
         />
     </Header>

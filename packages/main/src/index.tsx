@@ -15,17 +15,17 @@ registerMicroApps([
     activeRule: '/react',
   },
   {
-    name: 'vue-app',
+    name: 'docs-app',
     entry: '//localhost:7102',
-    container: '#container',
-    activeRule: '/vue',
-  },
-  {
-    name: 'docusaurus-app',
-    entry: '//localhost:7103',
     container: '#container',
     activeRule: '/docs',
   },
+  // {
+  //   name: 'vue-app',
+  //   entry: '//localhost:7102',
+  //   container: '#container',
+  //   activeRule: '/vue',
+  // },
 ]);
 // 启动 qiankun
 start();
