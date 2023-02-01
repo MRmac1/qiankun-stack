@@ -1,1 +1,2 @@
 declare const __POWERED_BY_QIANKUN__
+declare var __webpack_public_path__

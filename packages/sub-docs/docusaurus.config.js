@@ -9,6 +9,7 @@ const config = {
   title: 'Qiankun Sub Docs',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
+  onBrokenLinks: 'ignore',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -21,7 +22,6 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -58,14 +58,21 @@ const config = {
       console.log('in subDocsPlugin');
       return {
         name: 'sub-docs-plugin',
-        configureWebpack(config) {
-          return {
+        configureWebpack(config, isServer) {
+          const overrideConfigure = {
             output: {
               library: 'sub-docs-[name]',
               libraryTarget: 'umd',
-              publicPath: 'http://localhost:7102/'
+              // publicPath: 'http://localhost:7102/'
+            },
+            devServer: {
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+              }
             }
-          };
+          }
+          !isServer && (overrideConfigure.entry = "./src/entry.js")
+          return overrideConfigure;
         }
         // async loadContent() {
         //   // ...
@@ -87,7 +94,7 @@ const config = {
         title: 'Qiankun Sub Docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'http://localhost:7102/img/logo.svg',
         },
         items: [
           {

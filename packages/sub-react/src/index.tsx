@@ -1,9 +1,12 @@
-import "./public-path";
 import { unmountComponentAtNode } from "react-dom";
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from "react-router-dom";
 import 'antd/dist/reset.css';
 import router from './router';
+
+if ((window as any).__POWERED_BY_QIANKUN__) {
+  __webpack_public_path__ = (window as any).__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
+}
 
 function render(props: any) {
   const containerWillMount = props.container ? props.container.querySelector('#root') : document.getElementById('root');
